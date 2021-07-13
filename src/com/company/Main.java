@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,7 +9,7 @@ public class Main {
         System.out.println(info(24,16));
         System.out.println(info(15,29));
         System.out.println(info(30,39));
-        System.out.println(info(34,25));
+        System.out.println(info(generateRandomAge(), 27));
     }
     public static String info(int age, int temperature) {
         if (age > 20 && age < 45 && temperature > -20 && temperature < 30) {
@@ -22,5 +24,11 @@ public class Main {
         else {
             return "Оставайтесь дома ";
         }
+    }
+
+    public static int generateRandomAge() {
+        Random random= new Random();
+        int age=random.nextInt(70);
+        return  age;
     }
 }
